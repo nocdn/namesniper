@@ -1,1 +1,2 @@
-names*
+test_files/
+.venv/
