@@ -8,13 +8,23 @@
 
 I recommend using a virtual environment to install the dependencies to prevent any conflicts with your system's python installation.
 
+macos and linux:
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
+windows:
+
+```bash
+python3 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+## usage
 
 The script can be run with several command-line options:
 
@@ -28,7 +38,7 @@ If no input method is specified, the script will prompt for username input.
 
 The script checks each username against the Mojang API to determine availability. A username is considered available if the API returns a non-200 status code.
 
-### Examples
+### examples
 
 Check a single username:
 
@@ -54,6 +64,6 @@ Save available usernames to a file:
 python namesniper.py -i usernames.txt -o available_usernames.txt
 ```
 
-### License
+### license
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

@@ -1,5 +1,6 @@
 import requests
 import argparse
+import time
 
 def readUsernames(filename):
     usernames = []
@@ -25,6 +26,8 @@ def checkUsernames(usernames, show_progress=False):
         if show_progress:
             progress = '#' * int((i / total) * 50)  # 50-character progress bar
             print(f"Progress: [{progress:<50}] {i}/{total}", end='\r')
+        # rate limit is 200 requests per minute so no more than 3.33 requests per second
+        time.sleep(0.35)
     if show_progress:
         print()
     return f"available usernames: {availableUsernames}"
